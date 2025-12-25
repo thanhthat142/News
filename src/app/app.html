@@ -1,2 +1,30 @@
-<app-header />
+<main class="main">
+  <app-header />
+  <div class="wrapper-cart">
+    <h1>News</h1>
+
+    <div class="card-container">
+    <p-card class="card" [style]="cardStyle">
+        <ng-template #header>
+            <img alt="Card" class="card-image" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+        </ng-template>
+        <ng-template #title> Advanced Card </ng-template>
+        <ng-template #subtitle> Card subtitle </ng-template>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
+        </p>
+        <ng-template #footer>
+            <div class="card-footer">
+                <p-button label="Cancel" severity="secondary" class="card-button" [outlined]="true" styleClass="card-button" />
+                <p-button label="Save" class="card-button" styleClass="card-button" />
+            </div>
+        </ng-template>
+    </p-card>
+</div>
+  </div>
+
+  <input type="text" [(ngModel)]="bindingMessage" placeholder="Enter your name" /><br /><br />
+  <div>Message: {{ bindingMessage }}</div>
+</main>
 <router-outlet />
