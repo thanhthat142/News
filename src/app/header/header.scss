@@ -1,0 +1,18 @@
+@import "primeicons/primeicons.css";
+
+.header-logo svg {
+    width: 142px;
+}
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    box-shadow: rgb(0, 0, 0, 0.1) 1px 1px 10px 0px;
+}
+
+.group-header .group-navigation {
+    display: flex;
+    column-gap: 20px;
+}
