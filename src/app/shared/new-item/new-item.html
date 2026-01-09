@@ -1,0 +1,32 @@
+<div class="group-news">
+  <div class="header-news">
+    <div class="col-1">Image</div>
+    <div class="col-2">Title</div>
+    <div class="col-3">Content</div>
+    <div class="col-4">Actions</div>
+  </div>
+  <div class="body-news">
+    @for (news of news; track news.id; let i = $index) {
+    <div class="row-news">
+      <div class="col-1">
+        <img width="100px" height="auto" [src]="news.image" alt="news" />
+      </div>
+      <div class="col-2">{{ news.title }}</div>
+      <div class="col-3">{{ news.content }}</div>
+      <div class="col-4">
+        <div class="btn-main">
+          <a [routerLink]="['/detail', news.id]">
+            <i class="pi pi-eye" style="font-size: 20px; color: white"></i>
+          </a>
+        </div>
+        <div class="btn-main" (click)="handleDelete(news.id)">
+          <a>
+            <i class="pi pi-trash" style="font-size: 20px; color: white"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  {{ totalNews }}
+</div>
