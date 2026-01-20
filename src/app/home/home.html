@@ -1,7 +1,10 @@
 <div class="wrapper-news">
   <h1 [ngClass]="{ active: isActive }">News</h1>
   @if (isVisible) {
-  <div>Welcome!</div>
+  <div>
+    <app-new-item [news]="news" (dataEvent)="handleDelete($event)"></app-new-item>
+  </div>
   }
-  <app-new-item [news]="news" (dataEvent)="handleDelete($event)"></app-new-item>
+
+  <button (click)="handleChangeVisible()">AAAAAAAAA</button>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChange, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { NewItems } from '../types/type-item';
@@ -9,13 +9,22 @@ import { NewItems } from '../types/type-item';
   templateUrl: './new-item.html',
   styleUrl: './new-item.scss',
 })
-export class NewItemComponent {
+export class NewItemComponent implements OnChanges, OnDestroy {
   @Input() news: NewItems[] = [];
 
   @Output() dataEvent = new EventEmitter<number>();
 
   get totalNews(): number {
     return this.news.length;
+  }
+
+  ngOnChanges(changes: any): void {
+    console.log(changes['news'].currentValue);
+    console.log(changes['news'].previousValue);
+  }
+
+  ngOnDestroy(): void {
+    console.log('NewItemComponent destroyed');
   }
 
   handleDelete = (id: number) => {
